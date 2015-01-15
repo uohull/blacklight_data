@@ -1,0 +1,29 @@
+<h4>Dataset headers</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Index</th>
+      <th>Display</th>
+      <th>Facet</th>
+      <th>Multivalued</th>
+      <th>Sortable</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dataset_header_props.each do |dataset_header_prop| %>
+      <tr>
+        <td><%= dataset_header_prop.name %></td>
+        <td><%= dataset_header_prop.searchable %></td>
+        <td><%= dataset_header_prop.displayable %></td>
+        <td><%= dataset_header_prop.facetable %></td>
+        <td><%= dataset_header_prop.multivalued %></td>
+        <td><%= dataset_header_prop.sortable %></td>
+        <td><%= link_to 'Edit', edit_dataset_dataset_header_prop_path(id: dataset_header_prop.id, dataset_id: @dataset.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

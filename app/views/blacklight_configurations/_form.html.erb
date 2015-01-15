@@ -1,0 +1,36 @@
+<%= form_for(@blacklight_configuration) do |f| %>
+  <% if @blacklight_configuration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blacklight_configuration.errors.count, "error") %> prohibited this blacklight_configuration from being saved:</h2>
+
+      <ul>
+      <% @blacklight_configuration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <strong>Configuration:</strong>
+    <%= @blacklight_configuration.configuration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :label %><br>
+    <%= f.text_field :label %>
+  </div>
+
+  <div class="field">
+    <%= f.label :enabled %><br>
+    <%= f.check_box :enabled %>
+  </div>
+
+  <div class="field">
+    <strong>Solr field:</strong>
+    <%= @blacklight_configuration.solr_field %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

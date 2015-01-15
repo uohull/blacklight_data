@@ -1,0 +1,9 @@
+<tr>
+  <% index_fields.each do |solr_fname, field| -%>
+    <td>
+      <%= render_index_field_value document, :field => solr_fname %>
+    </td>
+  <% end %>
+  <td><%= link_to_document document, :label=>"Show" %></td>
+</tr>
+

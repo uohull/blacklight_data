@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Configuration:</strong>
+  <%= @blacklight_configuration.configuration %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @blacklight_configuration.label %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @blacklight_configuration.solr_field %>
+</p>
+
+<%= link_to 'Edit', edit_blacklight_configuration_path(@blacklight_configuration) %> |
+<%= link_to 'Back', blacklight_configurations_path %>

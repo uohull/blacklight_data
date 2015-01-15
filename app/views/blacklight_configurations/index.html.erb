@@ -1,0 +1,122 @@
+<h1>Blacklight field configurations</h1>
+
+<h3>Title</h3>
+<p>The title configuration is used to specify the main field for the search results and record show page.</p>
+<p>
+  <strong>Field:</strong>
+    <% unless @title_configuration.nil? %>
+      <%= @title_configuration.label %>
+      <%= link_to 'Edit', edit_title_blacklight_configuration_path(id: @title_configuration.id) %></td>
+    <% end %>
+</p>
+
+
+<h3>Index</h3>
+<p>Index configurations define which fields will be shown on the search results pages</p>
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Enabled</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @index_configurations.each do |blacklight_configuration| %>
+      <tr>
+        <td><%= blacklight_configuration.label %></td>
+        <td><%= blacklight_configuration.enabled %></td>
+        <td><%= link_to 'Edit', edit_blacklight_configuration_path(id: blacklight_configuration.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h3>Show</h3>
+<p>Show configurations define which fields will be shown on the individual record pages</p>
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Enabled</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @show_configurations.each do |blacklight_configuration| %>
+      <tr>
+        <td><%= blacklight_configuration.label %></td>
+        <td><%= blacklight_configuration.enabled %></td>
+        <td><%= link_to 'Edit', edit_blacklight_configuration_path(id: blacklight_configuration.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h3>Facet</h3>
+<p>Facet configurations define which fields will be available as selectable facets.  This enables a user to refine search results.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Enabled</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @facet_configurations.each do |blacklight_configuration| %>
+      <tr>
+        <td><%= blacklight_configuration.label %></td>
+        <td><%= blacklight_configuration.enabled %></td>
+        <td><%= link_to 'Edit', edit_blacklight_configuration_path(id: blacklight_configuration.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h3>Search</h3>
+<p>Search configurations define which fields will be available as search options in the dropdown boxes.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Enabled</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @search_configurations.each do |blacklight_configuration| %>
+      <tr>
+        <td><%= blacklight_configuration.label %></td>
+        <td><%= blacklight_configuration.enabled %></td>
+        <td><%= link_to 'Edit', edit_blacklight_configuration_path(id: blacklight_configuration.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h3>Sort</h3>
+<p>Sort configurations define which fields will be available to sort search results.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Enabled</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sort_configurations.each do |blacklight_configuration| %>
+      <tr>
+        <td><%= blacklight_configuration.label %></td>
+        <td><%= blacklight_configuration.enabled %></td>
+        <td><%= link_to 'Edit', edit_blacklight_configuration_path(id: blacklight_configuration.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

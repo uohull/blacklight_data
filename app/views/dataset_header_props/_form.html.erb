@@ -1,0 +1,40 @@
+<%= form_for(@dataset_header_prop, url: dataset_dataset_header_prop_path) do |f| %>
+  <% if @dataset_header_prop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dataset_header_prop.errors.count, "error") %> prohibited this dataset_header_prop from being saved:</h2>
+
+      <ul>
+      <% @dataset_header_prop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <strong>Name: </strong><%= @dataset_header_prop.name %>
+  </div>
+  <div class="field">
+    <%= f.label :searchable %><br>
+    <%= f.check_box :searchable %>
+  </div>
+  <div class="field">
+    <%= f.label :displayable %><br>
+    <%= f.check_box :displayable %>
+  </div>
+  <div class="field">
+    <%= f.label :facetable %><br>
+    <%= f.check_box :facetable %>
+  </div>
+  <div class="field">
+    <%= f.label :multivalued %><br>
+    <%= f.check_box :multivalued %>
+  </div>
+  <div class="field">
+    <%= f.label :sortable %><br>
+    <%= f.check_box :sortable %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

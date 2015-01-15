@@ -1,0 +1,28 @@
+<h1>Datasets</h1>
+<p>List of Dataset records. Only a single Dataset can be indexed for the application.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Indexed</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datasets.each do |dataset| %>
+      <tr>
+        <td><%= dataset.data_file.name %></td>
+        <td><%= dataset.indexed %></td>
+        <td><%= link_to 'Show', dataset %></td>
+        <td><%= link_to 'Destroy', dataset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dataset', new_dataset_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dataset_header_prop.name %>
+</p>
+
+<p>
+  <strong>Searchable:</strong>
+  <%= @dataset_header_prop.searchable %>
+</p>
+
+<p>
+  <strong>Displayable:</strong>
+  <%= @dataset_header_prop.displayable %>
+</p>
+
+<p>
+  <strong>Facetable:</strong>
+  <%= @dataset_header_prop.facetable %>
+</p>
+
+<p>
+  <strong>Multivalued:</strong>
+  <%= @dataset_header_prop.multivalued %>
+</p>
+
+<p>
+  <strong>Sortable:</strong>
+  <%= @dataset_header_prop.sortable %>
+</p>
+
+<p>
+  <strong>Dataset:</strong>
+  <%= @dataset_header_prop.dataset %>
+</p>
+
+<%= link_to 'Edit', edit_dataset_header_prop_path(@dataset_header_prop) %> |
+<%= link_to 'Back', dataset_header_props_path %>

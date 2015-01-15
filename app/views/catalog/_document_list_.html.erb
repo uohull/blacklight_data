@@ -1,0 +1,12 @@
+<% # container for a single doc -%>
+<table class="table table-condensed">
+  <thead>
+    <% index_fields.each do |solr_fname, field| -%>
+        <th><%= field.label %></th>
+    <% end -%>
+    <th></th>
+  </thead>
+  <tbody>
+    <%= render documents, :as => :document %></td>
+  </tbody> 
+</table>

@@ -1,0 +1,31 @@
+<h1>Listing data_files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>File</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data_files.each do |data_file| %>
+      <tr>
+        <td><%= data_file.name %></td>
+        <td><%= link_to "File", data_file.file_url.to_s %></td>
+        <td><%= link_to 'Show', data_file %></td>
+        <td><%= link_to 'Edit', edit_data_file_path(data_file) %></td>
+        <td><%= link_to 'Destroy', data_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Use as dataset', data_file_datasets_path(data_file), method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Data file', new_data_file_path %>

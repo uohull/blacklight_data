@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data file (name):</strong>
+  <%= @dataset.data_file.name %>
+</p>
+<p>
+  <strong>Indexed:</strong>
+  <%= @dataset.indexed %>
+</p>
+
+<%= render 'dataset_header_props/index_table' %>
+
+<br/>
+<p>To index the dataset...</p>
+<p>
+  <%= link_to 'Index dataset', index_dataset_dataset_path, method: :put %>
+<p/>
+
+<p>
+  <%= link_to 'Back', datasets_path %>
+</p>
